@@ -1,5 +1,7 @@
 # crmchat-spamban
 
+**English** · [Русский](README.ru.md)
+
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/kimaduzin/crmchat-spamban/pulls)
