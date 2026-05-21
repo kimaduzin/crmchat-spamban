@@ -1,0 +1,11 @@
+[Unit]
+Description=Trigger SpamBan check on Saturday at 12:00 MSK
+
+[Timer]
+OnCalendar=Sat *-*-* 12:00:00 Europe/Moscow
+RandomizedDelaySec=120
+Persistent=true
+Unit=spamban-saturday.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Trigger SpamBan check (extra workspace) every day at 07:00 MSK
+
+[Timer]
+OnCalendar=*-*-* 07:00:00 Europe/Moscow
+RandomizedDelaySec=120
+Persistent=true
+Unit=spamban-extra-morning.service
+
+[Install]
+WantedBy=timers.target

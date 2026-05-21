@@ -1,0 +1,18 @@
+[Unit]
+Description=SpamBan check (weekday evening, 17:00–19:00 MSK)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=spamban
+WorkingDirectory=/opt/spamban
+EnvironmentFile=/opt/spamban/.env
+Environment=SPAMBAN_RUN_LABEL=weekday-evening
+Environment=SPAMBAN_WINDOW_MINUTES=120
+ExecStart=/opt/spamban/venv/bin/python /opt/spamban/check.py
+TimeoutStartSec=150min
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

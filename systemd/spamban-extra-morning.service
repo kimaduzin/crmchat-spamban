@@ -1,0 +1,19 @@
+[Unit]
+Description=SpamBan check — extra workspace (daily morning, 07:00–08:00 MSK)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=spamban
+WorkingDirectory=/opt/spamban
+EnvironmentFile=/opt/spamban/.env
+EnvironmentFile=/opt/spamban/.env.extra
+Environment=SPAMBAN_RUN_LABEL=extra-morning
+Environment=SPAMBAN_WINDOW_MINUTES=60
+ExecStart=/opt/spamban/venv/bin/python /opt/spamban/check.py
+TimeoutStartSec=90min
+Nice=10
+
+[Install]
+WantedBy=multi-user.target
